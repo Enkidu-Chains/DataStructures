@@ -210,6 +210,7 @@ int removeAll_nullPointerAndAnyValue_linkedListIsNullError() {
         return -1;
     }
 
+    list_node__clear(&p_head);
     return 0;
 }
 
@@ -229,6 +230,7 @@ int removeAll_validPointerAndValue_linkedListWithoutNodeWithPassedValue() {
         return -1;
     }
 
+    list_node__clear(&p_head);
     return 0;
 }
 
@@ -248,6 +250,7 @@ int removeAll_validPointerAndInvalidValue_ThereIsNoSuchNodeError() {
         return -1;
     }
 
+    list_node__clear(&p_head);
     return 0;
 }
 
