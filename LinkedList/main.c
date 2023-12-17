@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include "singly_linked_list_tests.h"
 
 int main() {
-    printf("Hello, World!\n");
+    runTests();
     return 0;
 }

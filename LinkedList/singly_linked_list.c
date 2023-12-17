@@ -26,10 +26,16 @@ void list_node__add(ListNode **p_head, const int value) {
 }
 
 int list_node__remove(ListNode **p_head, const int value) {
+    // p_head is not supposed to point to NULL pointer.
+    // A list is not supposed to be uninitialized or cleared to remove a node from it.
+    if (*p_head == NULL) {
+        return -1;
+    }
+
     ListNode *p_localHead = *p_head;
     ListNode *p_previous = NULL;
 
-    for (; p_localHead->next; p_localHead = p_localHead->next, p_previous = p_localHead) {
+    for (; p_localHead != NULL; p_previous = p_localHead, p_localHead = p_localHead->next) {
         // Skips all the notdes which value is not equal to the passed one.
         if (p_localHead->value != value) {
             continue;
@@ -52,7 +58,7 @@ int list_node__remove_all(ListNode **p_head, const int value) {
     int removed_code = list_node__remove(p_head, value);
 
     // If removed code is equal to -1 the first time we try to remove a node with the passed value,
-    // nothing was removed from the list.
+    // nothing was removed from the list or the list was uninitialized or cleared.
     if (removed_code == -1) {
         return -1;
     }

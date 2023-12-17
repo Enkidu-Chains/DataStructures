@@ -39,7 +39,7 @@ int list_node__remove_all(ListNode **p_head, int value);
 /**
  * \brief Frees allocated memory for all the nodes in a linked list and sets the potiner to the head to NULL pointer.
  * \param p_head A pointer to a pointer to the head of a linked list to clear.
- * \return 0 if a list was successfully cleard;<br/> -1 if a list was either already cleard or uninitialized.
+ * \return 0 if a list was successfully cleard;<br/> -1 if a list was either already cleared or uninitialized.
  */
 int list_node__clear(ListNode **p_head);
 
